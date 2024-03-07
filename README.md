@@ -1,24 +1,20 @@
 # README
+## programa experimental (nao foi refatorado)
+Gerencie seu banco de dados com o ruby console e crie listas que sao enviadas por email atraves do mailgun
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+o Model Tasks tem 3 dados
 
-Things you may want to cover:
+obj: objetivo da tarefa
+cooldown: quantos dias ate a tarefa se repetir
+done: tempo em que a tarefa foi feita
 
-* Ruby version
+toda vez que o programa roda, o done recebe -1, e quando zera e' adicionado a lista do email a ser enviado e recebe o valor do cooldown, uma task pode ser criada com:
 
-* System dependencies
+ruby c
 
-* Configuration
+taskin = Taskin.new(obj: 'limpar prateleiras', cooldown: 2, done: 2)
+taskin.save
 
-* Database creation
+Pronto, com o comando Taskin.all ja conseguimos ver que nossos dados foram cadastrados, na nossa view(pagina index padrao) aparece uma lista com todas nossas tasks cadastradas.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+crie sua mailgun api key e adicione um email aos permitidos e adicione no arquivo sender_controller.rb
