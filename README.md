@@ -13,6 +13,7 @@ toda vez que o programa roda, o done recebe -1, e quando zera e' adicionado a li
 ruby c
 
 taskin = Taskin.new(obj: 'limpar prateleiras', cooldown: 2, done: 2)
+
 taskin.save
 
 Pronto, com o comando Taskin.all ja conseguimos ver que nossos dados foram cadastrados, na nossa view(pagina index padrao) aparece uma lista com todas nossas tasks cadastradas.
